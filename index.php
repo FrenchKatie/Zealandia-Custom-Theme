@@ -6,7 +6,7 @@
       <?php wp_head(); ?>
    </head>
    <body>
-      <h1>hgeujdj</h1>
-      <?php wp_footer(); ?>
+      <h1>Welcome</h1>
+   <?php wp_footer(); ?>
    </body>
 </html>

@@ -10,3 +10,12 @@ function addCustomThemeStyles(){
 
 }
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');
+
+function addCustomThemeMenus(){
+   add_theme_support('menus');
+   register_nav_menu('header_nav', 'This is the header navigation that appears at the top of the page');
+   register_nav_menu('footer_nav', 'This is the footer navigation that appears at the bottom of the page');
+}
+add_action('init', 'addCustomThemeMenus');
+
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';

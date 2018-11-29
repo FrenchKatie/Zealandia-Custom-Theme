@@ -10,8 +10,20 @@
       <nav class=" bg-light">
           <div class="container">
              <div class="row">
-                  <nav class="navbar navbar-expand w-100" role="navigation">
-                    <div class="container">
+               <nav class="navbar navbar-expand w-100" role="navigation">
+                  <div class="container">
+                     <?php
+                        $custom_logo = get_theme_mod('custom_logo');
+                        $logo_url = wp_get_attachment_image_url($custom_logo, 'medium');
+                      ?>
+                      <?php if($custom_logo): ?>
+                          <a class="navbar-brand" href="#">
+                           <img src="<?= $logo_url  ?>" height="50" alt="">
+                         </a>
+                      <?php else: ?>
+                          <a class="navbar-brand" href="#"><?= bloginfo('name');  ?></a>
+                      <?php endif; ?>
+
                       <?php
                           wp_nav_menu( array(
                               'theme_location'    => 'header_nav',
@@ -29,3 +41,4 @@
              </div>
           </div>
       </nav>
+      

@@ -1,5 +1,5 @@
 <?php
-
+// GETS JS + CSS FILES
 function add_custom_styles(){
    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
    wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/theme-styles.css');
@@ -11,6 +11,11 @@ function add_custom_styles(){
 }
 add_action('wp_enqueue_scripts', 'add_custom_styles');
 
+//GET CUSTOM CUSTOMISER FILE
+require get_parent_theme_file_path('/addons/custom_customizer.php');
+
+
+//MENUS
 function add_custom_menus(){
    add_theme_support('menus');
    register_nav_menu('header_nav', 'This is the header navigation that appears at the top of the page');
@@ -19,6 +24,7 @@ function add_custom_menus(){
 add_action('init', 'add_custom_menus');
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
+//LOGOS
 function add_custom_logo(){
     add_theme_support('custom-logo', array(
         'height'        => 100,
@@ -29,6 +35,7 @@ function add_custom_logo(){
 }
 add_action('init', 'add_custom_logo');
 
+//POST TYPES
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video' ) );
 
 function add_tours_post_type(){
@@ -62,6 +69,7 @@ function add_tours_post_type(){
 }
 add_action('init', 'add_tours_post_type');
 
+//SIDEBAR
 function register_my_sidebars(){
     register_sidebar(array(
         'id' => 'front_page_sidebar',

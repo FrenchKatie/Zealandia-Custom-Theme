@@ -4,10 +4,11 @@
       <meta charset="utf-8">
       <title>Zealandia</title>
       <?php wp_head(); ?>
+      <link href="https://fonts.googleapis.com/css?family=Catamaran|Merriweather+Sans" rel="stylesheet">
    </head>
    <body>
 
-      <nav class=" bg-light">
+      <nav class="">
           <div class="container">
              <div class="row">
                <nav class="navbar navbar-expand w-100" role="navigation">
@@ -41,4 +42,3 @@
              </div>
           </div>
       </nav>
-      

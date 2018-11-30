@@ -4,7 +4,8 @@
       <meta charset="utf-8">
       <title>Zealandia</title>
       <?php wp_head(); ?>
-      <link href="https://fonts.googleapis.com/css?family=Catamaran|Merriweather+Sans" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Catamaran:400,600|Merriweather+Sans:300,400" rel="stylesheet">
+
    </head>
    <body>
 

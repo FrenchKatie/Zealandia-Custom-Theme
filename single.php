@@ -17,6 +17,40 @@
             </div>
 
 
+            <?php
+               $id = get_the_id();
+               $tourduration = get_post_meta($id, 'duration', true);
+               $tourdepartureTime = get_post_meta($id, 'departureTime', true);
+               $tourAvailability = get_post_meta($id, 'availability', true);
+               $tourMaxCapacity = get_post_meta($id, 'maxCapacity', true);
+               $tourMaxAge = get_post_meta($id, 'maxAge', true);
+            ?>
+
+
+            <div class="container">
+                <ul class="list-group list-group-flush">
+                    <?php if($tourduration): ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Duration<span class=""><?= $tourduration; ?> Hours</span></li>
+                    <?php endif; ?>
+                    <?php if($tourdepartureTime): ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Departs<span class=""><?= $tourdepartureTime; ?></span></li>
+                    <?php endif; ?>
+                    <?php if($tourAvailability): ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Tours Availiable<span class=""><?= $tourAvailability; ?></span></li>
+                    <?php endif; ?>
+                    <?php if($tourMaxCapacity): ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Max Capacity<span class=""><?= $tourMaxCapacity; ?> People</span></li>
+                    <?php endif; ?>
+                    <?php if($tourMaxAge): ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Max Age<span class=""><?= $tourMaxAge; ?> Years</span></li>
+                    <?php endif; ?>
+
+                </ul>
+            </div>
+
+
+
+
 
         <?php endwhile; ?>
     <?php endif; ?>

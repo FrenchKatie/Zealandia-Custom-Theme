@@ -60,8 +60,8 @@ function add_tours_post_type(){
       'supports'              => array(
            'title',
            'thumbnail',
-           'comments',
-           'author'
+           'editor',
+           'excerpt'
       ),
       'query_var'             => true
   );

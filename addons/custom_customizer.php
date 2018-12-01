@@ -174,5 +174,63 @@ function custom_theme_customizer($wp_customize){
           )
       );
 
+      //---------------
+      //TOURS PAGE PANEL
+      //---------------
+      $wp_customize->add_panel('Tours_Page_Panel', array(
+          'title'             => __('Tours Page' , 'zealandiaTheme'),
+          'priority'          => 30,
+          'description'       => 'This panel will hold the tours page sections'
+      ));
+
+
+      //Tours Header Image section
+      $wp_customize->add_section('tours_header_image_section', array(
+          'title'             => __('Header Image', 'zealandiaTheme'),
+          'priority'          => 30,
+          'panel'             => 'Tours_Page_Panel'
+      ));
+
+      $wp_customize->add_setting('tours_header_image_setting', array(
+          'default'           => '',
+          'transport'         => 'refresh'
+      ));
+
+      $wp_customize->add_control(
+         new WP_Customize_Image_Control(
+             $wp_customize,
+             'tours_header_image_control',
+             array(
+                 'label'      => __( 'Upload an image', 'zealandiaTheme' ),
+                 'section'    => 'tours_header_image_section',
+                 'settings'   => 'tours_header_image_setting'
+             )
+         )
+     );
+
+     //Home Title section
+     $wp_customize->add_section('tours_body_title_section', array(
+          'title'             => __('Body Title Text' , 'zealandiaTheme'),
+          'priority'          => 53,
+          'panel'             => 'Tours_Page_Panel'
+      ));
+
+      $wp_customize->add_setting('tours_body_title_setting', array(
+          'default'           => '',
+          'transport'         => 'refresh'
+      ));
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'tours_body_title_control',
+              array(
+                  'label'     => __('Body Title' , 'zealandiaTheme'),
+                  'section'   => 'tours_body_title_section',
+                  'settings'  => 'tours_body_title_setting'
+              )
+          )
+      );
+
 }
 add_action('customize_register' , 'custom_theme_customizer');

@@ -9,9 +9,6 @@
             <button type="button" name="button" class="text-uppercase small-header button mt-5">Get Tickets</button>
         </div>
     </div>
-    <!-- <div class="w-100 text-center image-text ">
-
-    </div> -->
 <?php endif; ?>
     <div class="container pb-5">
         <h3 class="w-75 auto-margins pt-5 pb-5 text-center subheader"><?php echo get_theme_mod('home_body_title_setting'); ?></h3>

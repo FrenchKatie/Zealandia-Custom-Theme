@@ -1,9 +1,7 @@
 <!-- <h3>This is coming from the footer</h3> -->
-        <footer class="mt-5">
-            <div class="container">
+        <footer>
                 <div class="row">
-                    <nav class="navbar navbar-expand w-100" role="navigation">
-                      <div class="container">
+                    <nav class="navbar navbar-expand w-100 p-0" role="navigation">
                         <?php
                             wp_nav_menu( array(
                     			'theme_location'    => 'footer_nav',
@@ -11,18 +9,14 @@
                                 'depth'             => 2,
                                 'container'         => 'div',
                                 'container_class'   => 'collapse navbar-collapse',
-                                'menu_class'        => 'nav justify-content-end w-100',
+                                'menu_class'        => 'nav justify-content-md-center w-100 small-header text-uppercase pt-5 pb-5 footer-nav',
                                 'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                                 'walker'            => new WP_Bootstrap_Navwalker(),
                     		) );
                          ?>
-                        </div>
                     </div>
                 </div>
-            </div>
         </footer>
-
-
         <?php wp_footer(); ?>
     </body>
 </html>

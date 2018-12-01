@@ -9,11 +9,11 @@
    </head>
    <body>
 
-      <nav class="">
+      <nav>
           <div class="container">
              <div class="row">
-               <nav class="navbar navbar-expand w-100" role="navigation">
-                  <div class="container">
+               <nav class="navbar navbar-expand w-100 p-0" role="navigation">
+                  <div class="container test">
                      <?php
                         $custom_logo = get_theme_mod('custom_logo');
                         $logo_url = wp_get_attachment_image_url($custom_logo, 'medium');
@@ -33,7 +33,7 @@
                               'depth'             => 2,
                               'container'         => 'div',
                               'container_class'   => 'collapse navbar-collapse',
-                              'menu_class'        => 'nav justify-content-end w-100',
+                              'menu_class'        => 'nav justify-content-end w-100 header-nav small-header text-uppercase',
                               'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                               'walker'            => new WP_Bootstrap_Navwalker(),
                       ) );

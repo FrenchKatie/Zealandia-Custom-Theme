@@ -1,22 +1,27 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin:0px;
+}
 .header{
     font-family: 'Catamaran', sans-serif;
     font-weight: 600;
     font-size: 48px;
 }
-.secondary-header{
+/* .secondary-header{
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300;
     font-size: 20px;
-}
+} */
 .subheader{
     font-family: 'Catamaran', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 25px;
 }
 .body{
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 15px;
 }
 .small-header{
     font-family: 'Catamaran', sans-serif;
@@ -28,4 +33,38 @@
 }
 .image-text{
     margin: auto;
+}
+.header-nav li a{
+    color: black;
+}
+.footer-nav{
+    background-color: #10AC84;
+}
+.footer-nav li a{
+    color: white;
+}
+.bg-img{
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    background-repeat: no-repeat;
+}
+.auto-margins{
+    margin: auto;
+}
+.parent{
+    padding: 5% 0;
+    color: white;
+}
+.child{
+    padding: 5% 0;
+    color: white;
+}
+.button{
+    background-color: #10AC84;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
 }

@@ -232,5 +232,39 @@ function custom_theme_customizer($wp_customize){
           )
       );
 
+      //---------------
+      //SIGNEL TOUR PAGE PANEL
+      //---------------
+      $wp_customize->add_panel('Single_Tour_Page_Panel', array(
+          'title'             => __('Single Tour Page' , 'zealandiaTheme'),
+          'priority'          => 30,
+          'description'       => 'This panel will hold the single tour page sections'
+      ));
+
+
+      //Tours Header Image section
+      $wp_customize->add_section('single_tour_header_image_section', array(
+          'title'             => __('Header Image', 'zealandiaTheme'),
+          'priority'          => 30,
+          'panel'             => 'Single_Tour_Page_Panel'
+      ));
+
+      $wp_customize->add_setting('single_tour_header_image_setting', array(
+          'default'           => '',
+          'transport'         => 'refresh'
+      ));
+
+      $wp_customize->add_control(
+         new WP_Customize_Image_Control(
+             $wp_customize,
+             'single_tour_header_image_control',
+             array(
+                 'label'      => __( 'Upload an image', 'zealandiaTheme' ),
+                 'section'    => 'single_tour_header_image_section',
+                 'settings'   => 'single_tour_header_image_setting'
+             )
+         )
+     );
+
 }
 add_action('customize_register' , 'custom_theme_customizer');

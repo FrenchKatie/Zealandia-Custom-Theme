@@ -68,3 +68,7 @@
     padding: 15px 30px;
     border-radius: 5px;
 }
+.field-type{
+    color: red !important;
+    background-color: blue;
+}

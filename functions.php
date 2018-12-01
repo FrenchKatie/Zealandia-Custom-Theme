@@ -11,8 +11,9 @@ function add_custom_styles(){
 }
 add_action('wp_enqueue_scripts', 'add_custom_styles');
 
-//GET CUSTOM CUSTOMISER FILE
+//GET CUSTOM CUSTOMIZER FILES
 require get_parent_theme_file_path('/addons/custom_customizer.php');
+require get_parent_theme_file_path('/addons/custom_fields.php');
 
 
 //MENUS

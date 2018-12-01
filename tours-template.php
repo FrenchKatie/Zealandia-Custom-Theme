@@ -5,7 +5,7 @@
 <?php get_header(); ?>
 
 
-<?php $HeaderImage = get_theme_mod('home_header_image_setting'); ?>
+<?php $HeaderImage = get_theme_mod('tours_header_image_setting'); ?>
 <?php if(strlen($HeaderImage) > 0): ?>
     <div class="bg-img w-100" style="background-image: url(<?php echo get_theme_mod('tours_header_image_setting'); ?>)">
     </div>
@@ -33,7 +33,7 @@
                  <?php while($allTours->have_posts()): $allTours->the_post();?>
                      <div class="text-center mt-5">
                          <?php if( has_post_thumbnail() ): ?>
-                             <?php the_post_thumbnail('thumbnail', ['class'=>'card-img-top img-fluid', 'alt'=>'Card image cap']); ?>
+                             <?php the_post_thumbnail('thumbnail', ['class'=>'', 'alt'=>'']); ?>
                          <?php endif; ?>
                        <div class="mt-5">
                          <h5 class="subheader"><?php the_title(); ?></h5>

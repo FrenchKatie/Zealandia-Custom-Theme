@@ -33,7 +33,7 @@
                  <?php while($allTours->have_posts()): $allTours->the_post();?>
                      <div class="text-center mt-5">
                          <?php if( has_post_thumbnail() ): ?>
-                             <?php the_post_thumbnail('thumbnail', ['class'=>'', 'alt'=>'']); ?>
+                             <?php the_post_thumbnail( 'large', array( 'sizes' => '(width:100) 145px, (width:425px) 220px, 500px' ) ); ?>
                          <?php endif; ?>
                        <div class="mt-5">
                          <h5 class="subheader"><?php the_title(); ?></h5>

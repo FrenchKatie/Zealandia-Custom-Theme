@@ -34,9 +34,7 @@ $metaboxes = array(
             )
 
         )
-    ),
-
-
+    )
 );
 
 function add_custom_fields(){

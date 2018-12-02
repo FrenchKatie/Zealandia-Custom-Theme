@@ -27,6 +27,11 @@ $metaboxes = array(
                 'type'          => 'number',
                 'description'   => 'This field requires a number.'
             ),
+            'minAge'      => array(
+                'title'         => 'Min Age for the Tour:',
+                'type'          => 'number',
+                'description'   => 'This field requires a number.'
+            ),
             'maxAge'      => array(
                 'title'         => 'Max Age for the Tour:',
                 'type'          => 'number',
@@ -35,8 +40,6 @@ $metaboxes = array(
 
         )
     ),
-
-
 );
 
 function add_custom_fields(){

@@ -34,7 +34,7 @@
 
             <div class="row pt-3">
                 <?php if(strlen($carouselImageOne OR $carouselImageTwo OR $carouselImageThree OR $carouselImageFour) > 0): ?>
-                    <div id="carouselExampleControls" class="carousel slide col" data-ride="carousel">
+                    <div id="carouselExampleControls" class="carousel slide col-md col-sm-12 mb-5" data-ride="carousel">
                       <div class="carousel-inner">
 
                             <div class="carousel-item active">
@@ -53,11 +53,11 @@
 
 
                       </div>
-                      <a class="carousel-control-prev pl-0" href="#carouselExampleControls" role="button" data-slide="prev">
+                      <a class="carousel-control-prev p-0" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                       </a>
-                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                      <a class="carousel-control-next p-0" href="#carouselExampleControls" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                       </a>
@@ -68,7 +68,7 @@
 
 
 
-                <ul class="list-group list-group-flush col ml-3">
+                <ul class="list-group list-group-flush col-md col-sm-12 ml-3 mr-3 pr-0">
                     <?php if($tourduration): ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Duration<span class=""><?= $tourduration; ?> Hours</span></li>
                     <?php endif; ?>
@@ -97,80 +97,90 @@
                 <div class="">
                     <img src="" alt="">
                 </div>
-                <h5 class="small-header">Select a date for your tour:</h5>
-                <select class="form-control mb-4">
-                  <option>Default select</option>
-                </select>
-                <h5 class="small-header">Select a time for your tour:</h5>
-                <div class="mb-4">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">10:00AM</label>
+                <form class="form-group" action="index.html" method="post">
+                    <h5 class="small-header">Select a date for your tour:</h5>
+                    <select class="form-control mb-4">
+                      <option>Default select</option>
+                    </select>
+
+
+
+                    <h5 class="small-header">Select a time for your tour:</h5>
+
+                    <div class="mb-4">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">10:00AM</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                          <label class="form-check-label" for="inlineCheckbox2">2:00PM</label>
+                        </div>
+
+
+
+
+                    <h5 class="small-header">Select your tickets:</h5>
+                    <div class="">
+                        <div class="list-group list-group-flush col ml-3">
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                                <div class="col">
+                                    <h6>Adult</h6>
+                                    <p>$19.50</p>
+                                </div>
+                                <div class="form-group col col-3 col-md-2 col-lg-1">
+                                    <input class="form-control" type="number" value="0" id="example-number-input">
+                                </div>
+                            </div>
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                                <div class="col">
+                                    <h6>Children - ages 5 - 17</h6>
+                                    <p>$19.50</p>
+                                </div>
+                                <div class="form-group col col-3 col-md-2 col-lg-1">
+                                    <input class="form-control" type="number" value="0" id="example-number-input">
+                                </div>
+                            </div>
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                                <div class="col">
+                                    <h6>Under 5's</h6>
+                                    <p>$19.50</p>
+                                </div>
+                                <div class="form-group col col-3 col-md-2 col-lg-1">
+                                    <input class="form-control" type="number" value="0" id="example-number-input">
+                                </div>
+                            </div>
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                                <div class="col">
+                                    <h6>Family - up to 2 adults and 3 children</h6>
+                                    <p>$19.50</p>
+                                </div>
+                                <div class="form-group col col-3 col-md-2 col-lg-1">
+                                    <input class="form-control" type="number" value="0" id="example-number-input">
+                                </div>
+                            </div>
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                                <div class="col">
+                                    <h6>Concession</h6>
+                                    <p>$19.50</p>
+                                </div>
+                                <div class="form-group col col-3 col-md-2 col-lg-1">
+                                    <input class="form-control" type="number" value="0" id="example-number-input">
+                                </div>
+                            </div>
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                                <div class="col">
+                                    <h6>Zealandia Members</h6>
+                                    <p>$19.50</p>
+                                </div>
+                                <div class="form-group col col-3 col-md-2 col-lg-1">
+                                    <input class="form-control" type="number" value="0" id="example-number-input">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox2">2:00PM</label>
-                    </div>
-                </div>
-                <h5 class="small-header">Select your tickets:</h5>
-                <div class="">
-                    <div class="list-group list-group-flush col ml-3">
-                        <div class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">
-                            <div class="">
-                                <h6>Adult</h6>
-                                <p>$19.50</p>
-                            </div>
-                            <div class="">
-                                <input type="number" name="" value="">
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">
-                            <div class="">
-                                <h6>Children - ages 5 - 17</h6>
-                                <p>$19.50</p>
-                            </div>
-                            <div class="">
-                                <input type="number" name="" value="">
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">
-                            <div class="">
-                                <h6>Under 5's</h6>
-                                <p>$19.50</p>
-                            </div>
-                            <div class="">
-                                <input type="number" name="" value="">
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">
-                            <div class="">
-                                <h6>Family - up to 2 adults and 3 children</h6>
-                                <p>$19.50</p>
-                            </div>
-                            <div class="">
-                                <input type="number" name="" value="">
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">
-                            <div class="">
-                                <h6>Concession</h6>
-                                <p>$19.50</p>
-                            </div>
-                            <div class="">
-                                <input type="number" name="" value="">
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">
-                            <div class="">
-                                <h6>Zealandia Members</h6>
-                                <p>$19.50</p>
-                            </div>
-                            <div class="">
-                                <input type="number" name="" value="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </form>
+
             </div>
 
 

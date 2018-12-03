@@ -180,11 +180,8 @@
                         </div>
                     </div>
                 </form>
-
             </div>
-
-
-
+        </div>
         <?php endwhile; ?>
     <?php endif; ?>
 </div>

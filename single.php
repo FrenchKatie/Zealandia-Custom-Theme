@@ -26,10 +26,16 @@
                $tourMaxAge          = get_post_meta($id, 'maxAge', true);
                $tourMinAge          = get_post_meta($id, 'minAge', true);
 
-               $carouselImageOne    = get_theme_mod('single_tour_carousel_image_one_setting');
-               $carouselImageTwo    = get_theme_mod('single_tour_carousel_image_two_setting');
-               $carouselImageThree    = get_theme_mod('single_tour_carousel_image_three_setting');
-               $carouselImageFour    = get_theme_mod('single_tour_carousel_image_four_setting');
+                                                        //second_featured_image
+               $carouselImageOne       = get_post_meta($id, 'first_carousel_image', true);
+               $carouselImageTwo       = get_post_meta($id, 'second_carousel_image', true);
+               $carouselImageThree       = get_post_meta($id, 'third_carousel_image', true);
+               $carouselImageFour       = get_post_meta($id, 'fourth_carousel_image', true);
+
+               // $carouselImageOne    = get_theme_mod('single_tour_carousel_image_one_setting');
+               // $carouselImageTwo    = get_theme_mod('single_tour_carousel_image_two_setting');
+               // $carouselImageThree    = get_theme_mod('single_tour_carousel_image_three_setting');
+               // $carouselImageFour    = get_theme_mod('single_tour_carousel_image_four_setting');
             ?>
 
             <div class="row pt-3">
@@ -37,19 +43,35 @@
                     <div id="carouselExampleControls" class="carousel slide col-md col-sm-12 mb-5" data-ride="carousel">
                       <div class="carousel-inner">
 
+
+
+                        <?php if(strlen($carouselImageOne) > 0): ?>
                             <div class="carousel-item active">
-                              <img class="d-block w-100" src="<?php echo wp_get_attachment_image(get_post_meta(get_the_ID(), 'second_featured_image', true),'full'); ?>" alt="Second slide">
+                              <img class="d-block w-100" src="<?php echo wp_get_attachment_image($carouselImageOne,'full'); ?> " alt="First slide">
                             </div>
 
-                        <div class="carousel-item">
-                          <img class="d-block w-100" src="<?php echo wp_get_attachment_image(get_post_meta(get_the_ID(), 'third_featured_image', true),'full'); ?>" alt="Third slide">
-                        </div>
-                        <div class="carousel-item">
-                          <img class="d-block w-100" src="<?php echo get_theme_mod('single_tour_carousel_image_three_setting'); ?>" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                          <img class="d-block w-100" src="<?php echo get_theme_mod('single_tour_carousel_image_four_setting'); ?>" alt="Second slide">
-                        </div>
+
+
+                        <?php elseif(strlen($carouselImageTwo) > 0): ?>
+                            <div class="carousel-item">
+                              <img class="d-block w-100" src="<?php echo wp_get_attachment_image($carouselImageTwo,'full'); ?>" alt="Second slide">
+                            </div>
+
+
+
+                        <?php elseif(strlen($carouselImageThree) > 0): ?>
+                            <div class="carousel-item">
+                              <img class="d-block w-100" src="<?php echo wp_get_attachment_image($carouselImageThree,'full'); ?>" alt="Third slide">
+                            </div>
+
+
+
+                        <?php elseif(strlen($carouselImageFour) > 0): ?>
+                            <div class="carousel-item">
+                              <img class="d-block w-100" src="<?php echo wp_get_attachment_image($carouselImageFour,'full'); ?>" alt="Fourth slide">
+                            </div>
+                        <?php endif; ?>
+
 
 
                       </div>

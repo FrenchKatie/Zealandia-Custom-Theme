@@ -7,7 +7,7 @@
                             'depth'             => 2,
                             'container'         => 'div',
                             'container_class'   => 'collapse navbar-collapse',
-                            'menu_class'        => 'nav justify-content-center w-100 small-header text-uppercase pt-5 pb-5 footer-nav ',
+                            'menu_class'        => 'nav footer-nav justify-content-center w-100 small-header text-uppercase pt-5 pb-5 footer-nav ',
                             'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                             'walker'            => new WP_Bootstrap_Navwalker(),
                 		) );

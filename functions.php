@@ -105,14 +105,14 @@ function custom_postimage_meta_box(){
     //on which post types should the box appear?
     $post_types = array('tours');
     foreach($post_types as $pt){
-        add_meta_box('custom_postimage_meta_box',__( 'More Featured Images', 'yourdomain'),'custom_postimage_meta_box_func',$pt,'side','low');
+        add_meta_box('custom_postimage_meta_box',__( 'Carousel Images', 'yourdomain'),'custom_postimage_meta_box_func',$pt,'side','low');
     }
 }
 
 function custom_postimage_meta_box_func($post){
 
     //an array with all the images (ba meta key). The same array has to be in custom_postimage_meta_box_save($post_id) as well.
-    $meta_keys = array('second_featured_image','third_featured_image');
+    $meta_keys = array('first_carousel_image','second_carousel_image', 'third_carousel_image', 'fourth_carousel_image');
 
     foreach($meta_keys as $meta_key){
         $image_meta_val=get_post_meta( $post->ID, $meta_key, true);
@@ -176,7 +176,7 @@ function custom_postimage_meta_box_save($post_id){
     if (isset( $_POST['custom_postimage_meta_box_nonce'] ) && wp_verify_nonce($_POST['custom_postimage_meta_box_nonce'],'custom_postimage_meta_box' )){
 
         //same array as in custom_postimage_meta_box_func($post)
-        $meta_keys = array('second_featured_image','third_featured_image');
+        $meta_keys = array('first_carousel_image','second_carousel_image', 'third_carousel_image', 'fourth_carousel_image' );
         foreach($meta_keys as $meta_key){
             if(isset($_POST[$meta_key]) && intval($_POST[$meta_key])!=''){
                 update_post_meta( $post_id, $meta_key, intval($_POST[$meta_key]));

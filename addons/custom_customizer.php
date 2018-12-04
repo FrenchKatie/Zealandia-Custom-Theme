@@ -412,6 +412,84 @@ function custom_theme_customizer($wp_customize){
             )
         )
      );
+     //---------------
+     //FOOTER COLORS PANEL
+     //---------------
+     $wp_customize->add_panel('Footer_Colors_Panel', array(
+         'title'             => __('Footer Colours' , 'zealandiaTheme'),
+         'priority'          => 30,
+         'description'       => 'This panel will hold the footer colours'
+     ));
+
+
+     //Header Background colour
+     $wp_customize->add_section('footer_background_color_section', array(
+         'title'             => __('Footer Background Colour', 'zealandiaTheme'),
+         'priority'          => 30,
+         'panel'             => 'Footer_Colors_Panel'
+     ));
+
+     $wp_customize->add_setting('footer_background_color_setting', array(
+         'default'           => '',
+         'transport'         => 'refresh'
+     ));
+
+     $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'footer_background_color_control',
+            array(
+                'label'      => __( 'Background Colour', 'zealandiaTheme' ),
+                'section'    => 'footer_background_color_section',
+                'settings'   => 'footer_background_color_setting'
+            )
+        )
+     );
+
+     //Header font colour
+     $wp_customize->add_section('footer_links_color_section', array(
+         'title'             => __('Footer Link Colour', 'zealandiaTheme'),
+         'priority'          => 30,
+         'panel'             => 'Footer_Colors_Panel'
+     ));
+     $wp_customize->add_setting('footer_links_color_setting', array(
+         'default'           => '',
+         'transport'         => 'refresh'
+     ));
+
+     $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'footer_links_color_control',
+            array(
+                'label'      => __( 'Links Colour', 'zealandiaTheme' ),
+                'section'    => 'footer_links_color_section',
+                'settings'   => 'footer_links_color_setting'
+            )
+        )
+     );
 
 }
 add_action('customize_register' , 'custom_theme_customizer');
+
+
+function custom_theme_customizer_styles(){
+    ?>
+         <style type="text/css">
+            .header-bg{
+                background-color: <?php echo get_theme_mod('header_background_color_setting', '#ffffff'); ?>!important;
+            }
+            .header-nav li a{
+                color: <?php echo get_theme_mod('header_links_color_setting', '#ffffff'); ?>!important;
+            }
+            .footer-nav{
+                background-color: <?php echo get_theme_mod('footer_background_color_setting', '#ffffff'); ?>!important;
+            }
+            .footer-nav li a{
+                color: <?php echo get_theme_mod('footer_links_color_setting', '#ffffff'); ?>!important;
+
+            }
+        </style>
+     <?php
+}
+add_action('wp_head', 'custom_theme_customizer_styles');

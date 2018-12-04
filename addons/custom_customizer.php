@@ -356,5 +356,62 @@ function custom_theme_customizer($wp_customize){
          )
      );
 
+     //---------------
+     //HEADER COLORS PANEL
+     //---------------
+     $wp_customize->add_panel('Header_Colors_Panel', array(
+         'title'             => __('Header Colours' , 'zealandiaTheme'),
+         'priority'          => 30,
+         'description'       => 'This panel will hold the header colours'
+     ));
+
+
+     //Header Background colour
+     $wp_customize->add_section('header_background_color_section', array(
+         'title'             => __('Header Background Colour', 'zealandiaTheme'),
+         'priority'          => 30,
+         'panel'             => 'Header_Colors_Panel'
+     ));
+
+     $wp_customize->add_setting('header_background_color_setting', array(
+         'default'           => '',
+         'transport'         => 'refresh'
+     ));
+
+     $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'header_background_color_control',
+            array(
+                'label'      => __( 'Background Colour', 'zealandiaTheme' ),
+                'section'    => 'header_background_color_section',
+                'settings'   => 'header_background_color_setting'
+            )
+        )
+     );
+
+     //Header font colour
+     $wp_customize->add_section('header_links_color_section', array(
+         'title'             => __('Header Link Colour', 'zealandiaTheme'),
+         'priority'          => 30,
+         'panel'             => 'Header_Colors_Panel'
+     ));
+     $wp_customize->add_setting('header_links_color_setting', array(
+         'default'           => '',
+         'transport'         => 'refresh'
+     ));
+
+     $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'header_links_color_control',
+            array(
+                'label'      => __( 'Links Colour', 'zealandiaTheme' ),
+                'section'    => 'header_links_color_section',
+                'settings'   => 'header_links_color_setting'
+            )
+        )
+     );
+
 }
 add_action('customize_register' , 'custom_theme_customizer');

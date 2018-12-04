@@ -35,10 +35,10 @@
                          <?php if( has_post_thumbnail() ): ?>
                              <?php the_post_thumbnail( 'large', array( 'sizes' => '(width:100) 145px, (width:425px) 220px, 500px' ) ); ?>
                          <?php endif; ?>
-                       <div class="mt-5">
+                       <div class="mt-5 mb-5">
                          <h5 class="subheader"><?php the_title(); ?></h5>
                          <p class="body"><?php the_excerpt(); ?></p>
-                         <a class="text-uppercase small-header button mt-2 mb-5" href="<?= esc_url(get_permalink()); ?>">Go to post</a>
+                         <a class="text-uppercase small-header button" href="<?= esc_url(get_permalink()); ?>">Go to post</a>
 
                        </div>
                      </div>

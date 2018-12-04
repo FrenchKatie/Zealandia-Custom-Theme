@@ -116,6 +116,7 @@
                           <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                           <label class="form-check-label" for="inlineCheckbox2">2:00PM</label>
                         </div>
+                    </div>
 
 
 
@@ -181,7 +182,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+
         <?php endwhile; ?>
     <?php endif; ?>
 </div>

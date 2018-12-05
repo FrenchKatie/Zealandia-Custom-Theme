@@ -5,32 +5,10 @@
     <div class="bg-img parent w-100" style="background-image: url(<?php echo get_theme_mod('home_header_image_setting'); ?>)">
         <div class="child w-50 auto-margins text-center image-text">
             <h1 class="header header_img_header"><?php echo get_theme_mod('home_header_image_title_setting'); ?></h1>
-            <h2 class="body header_img_subheader"><?php echo get_theme_mod('home_header_image_paragraph_setting'); ?></h2>
-            <button type="button" name="button" class="text-uppercase button mt-5">Get Tickets</button>
+            <h2 class="body header_img_subheader mb-5"><?php echo get_theme_mod('home_header_image_paragraph_setting'); ?></h2>
+             <a class="text-uppercase button mt-5" href="<?php echo get_theme_mod('home_page_header_image_button_link_setting'); ?>"><?php echo get_theme_mod('home_page_header_image_button_text_setting'); ?></a>
         </div>
     </div>
-
-        <?php $featuredPostID = get_theme_mod('home_page_header_image_button_link_setting'); ?>
-        <?php if($featuredPostID): ?>
-             <?php
-                $args = array(
-                    'p' => $featuredPostID
-                );
-                $featuredPost = new WP_Query($args);
-             ?>
-              <?php if( $featuredPost->have_posts() ): ?>
-                 <?php while($featuredPost->have_posts()): $featuredPost->the_post();?>
-                     <div class="card col-6">
-                         <h3><?php the_title(); ?></h3>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                         <button type="button" name="button">Go to Post</button>
-                         <a class="text-uppercase button" href="<?= esc_url(get_permalink()); ?>">Go to post</a>
-                     </div>
-                 <?php endwhile; ?>
-             <?php endif; ?>
-         <?php endif; ?>
-
-
 
 <?php endif; ?>
     <div class="container pb-5">

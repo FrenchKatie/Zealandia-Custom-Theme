@@ -38,7 +38,7 @@
                        <div class="mt-5 mb-5">
                          <h5 class="subheader"><?php the_title(); ?></h5>
                          <p class="body"><?php the_excerpt(); ?></p>
-                         <a class="text-uppercase button" href="<?= esc_url(get_permalink()); ?>">Go to post</a>
+                         <a class="text-uppercase button" href="<?= esc_url(get_permalink()); ?>"><?php echo get_theme_mod('tours_page_button_text_setting'); ?></a>
 
                        </div>
                      </div>

@@ -204,7 +204,7 @@
                                 </div>
                             </div>
                             <div class="mt-5 mb-5 text-center">
-                                <a class="text-uppercase button mb-5 w-25" href="#">Add booking to cart</a>
+                                <a class="text-uppercase button mb-5 w-25" href="#"><?php echo get_theme_mod('single_tour_page_button_text_setting'); ?></a>
                             </div>
 
 

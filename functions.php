@@ -1,5 +1,9 @@
 <?php
 // GETS JS + CSS FILES
+// $allPages = get_pages();
+
+// var_dump($allPages);
+// die();
 function add_custom_styles(){
    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
    wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/theme-styles.css');

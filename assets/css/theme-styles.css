@@ -71,6 +71,9 @@
     font-weight: 600;
     font-size: 15px;
 }
+.button:hover{
+    text-decoration: none;
+}
 .field-type{
     color: red !important;
     background-color: blue;

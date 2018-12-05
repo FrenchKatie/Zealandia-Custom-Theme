@@ -90,6 +90,8 @@ function custom_theme_customizer($wp_customize){
        'default' => '',
        'transport' => 'refresh'
    ));
+   
+
     $wp_customize->add_control(
        new WP_Customize_Control(
            $wp_customize,

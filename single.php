@@ -38,7 +38,7 @@
                // $carouselImageFour    = get_theme_mod('single_tour_carousel_image_four_setting');
             ?>
 
-            <div class="row pt-3">
+            <div class="row pt-3 mb-5">
                 <?php if(strlen($carouselImageOne OR $carouselImageTwo OR $carouselImageThree OR $carouselImageFour) > 0): ?>
                     <div id="carouselExampleControls" class="carousel slide col-md col-sm-12 mb-5" data-ride="carousel">
                       <div class="carousel-inner">

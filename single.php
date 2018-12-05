@@ -49,24 +49,25 @@
                             <div class="carousel-item active">
                               <img class="d-block w-100" src="<?php echo wp_get_attachment_image($carouselImageOne,'full'); ?> " alt="First slide">
                             </div>
+                        <?php endif; ?>
 
 
-
-                        <?php elseif(strlen($carouselImageTwo) > 0): ?>
+                        <?php if(strlen($carouselImageTwo) > 0): ?>
                             <div class="carousel-item">
+
                               <img class="d-block w-100" src="<?php echo wp_get_attachment_image($carouselImageTwo,'full'); ?>" alt="Second slide">
                             </div>
+                        <?php endif; ?>
 
 
-
-                        <?php elseif(strlen($carouselImageThree) > 0): ?>
+                        <?php if(strlen($carouselImageThree) > 0): ?>
                             <div class="carousel-item">
                               <img class="d-block w-100" src="<?php echo wp_get_attachment_image($carouselImageThree,'full'); ?>" alt="Third slide">
                             </div>
+                        <?php endif; ?>
 
 
-
-                        <?php elseif(strlen($carouselImageFour) > 0): ?>
+                        <?php if(strlen($carouselImageFour) > 0): ?>
                             <div class="carousel-item">
                               <img class="d-block w-100" src="<?php echo wp_get_attachment_image($carouselImageFour,'full'); ?>" alt="Fourth slide">
                             </div>
@@ -90,7 +91,7 @@
 
 
 
-                <ul class="list-group list-group-flush col-md col-sm-12 ml-3 mr-3 pr-0">
+                <ul class="list-group list-group-flush col-md col-sm-12 ml-3 mr-3 pr-0 body-list">
                     <?php if($tourduration): ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Duration<span class=""><?= $tourduration; ?> Hours</span></li>
                     <?php endif; ?>
@@ -115,7 +116,7 @@
         </div>
         <div class="bg-img parent w-100 mb-5" style="background-image: url(<?php echo get_theme_mod('single_tour_header_image_setting'); ?>)"></div>
         <div class="container">
-            <h3 class="text-center mb-3">Make a Booking</h3>
+            <h3 class="text-center mb-3 subheader">Make a Booking</h3>
             <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
             <div class="mt-5">
@@ -148,7 +149,7 @@
                     <h5 class="small-header">Select your tickets:</h5>
 
                         <div class="list-group list-group-flush col ml-3">
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
                                 <div class="col">
                                     <h6>Adult</h6>
                                     <p>$19.50</p>
@@ -157,7 +158,7 @@
                                     <input class="form-control" type="number" value="0" id="example-number-input">
                                 </div>
                             </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
                                 <div class="col">
                                     <h6>Children - ages 5 - 17</h6>
                                     <p>$19.50</p>
@@ -166,7 +167,7 @@
                                     <input class="form-control" type="number" value="0" id="example-number-input">
                                 </div>
                             </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
                                 <div class="col">
                                     <h6>Under 5's</h6>
                                     <p>$19.50</p>
@@ -175,7 +176,7 @@
                                     <input class="form-control" type="number" value="0" id="example-number-input">
                                 </div>
                             </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
                                 <div class="col">
                                     <h6>Family - up to 2 adults and 3 children</h6>
                                     <p>$19.50</p>
@@ -184,7 +185,7 @@
                                     <input class="form-control" type="number" value="0" id="example-number-input">
                                 </div>
                             </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
                                 <div class="col">
                                     <h6>Concession</h6>
                                     <p>$19.50</p>
@@ -193,7 +194,7 @@
                                     <input class="form-control" type="number" value="0" id="example-number-input">
                                 </div>
                             </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0">
+                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
                                 <div class="col">
                                     <h6>Zealandia Members</h6>
                                     <p>$19.50</p>
@@ -203,7 +204,7 @@
                                 </div>
                             </div>
                             <div class="mt-5 mb-5 text-center">
-                                <a class="text-uppercase small-header button mb-5 w-25" href="#">Add booking to cart</a>
+                                <a class="text-uppercase button mb-5 w-25" href="#">Add booking to cart</a>
                             </div>
 
 

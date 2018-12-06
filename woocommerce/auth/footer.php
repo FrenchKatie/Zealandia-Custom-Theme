@@ -16,9 +16,9 @@
  * @version 2.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+// if ( ! defined( 'ABSPATH' ) ) {
+// 	exit;
+// }
 
 ?>
 		</div>

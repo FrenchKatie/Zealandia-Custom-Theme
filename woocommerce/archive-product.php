@@ -30,10 +30,11 @@ do_action( 'woocommerce_before_main_content' );
 
 ?>
 <header class="woocommerce-products-header">
-	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+	<?php $HeaderImage = get_theme_mod('tours_header_image_setting'); ?>
+	<?php if(strlen($HeaderImage) > 0): ?>
+	    <div class="bg-img w-100" style="background-image: url(<?php echo get_theme_mod('tours_header_image_setting'); ?>)">
+	    </div>
 	<?php endif; ?>
-
 	<?php
 	/**
 	 * Hook: woocommerce_archive_description.
@@ -41,7 +42,7 @@ do_action( 'woocommerce_before_main_content' );
 	 * @hooked woocommerce_taxonomy_archive_description - 10
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
-	do_action( 'woocommerce_archive_description' );
+	// do_action( 'woocommerce_archive_description' );
 	?>
 </header>
 <?php
@@ -54,7 +55,12 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action( 'woocommerce_before_shop_loop' );
+	// do_action( 'woocommerce_before_shop_loop' );
+	?>
+	<div class="container">
+	    <h3 class="w-75 auto-margins pt-5 pb-5 text-center subheader"><?php echo get_theme_mod('tickets_body_title_setting'); ?></h3>
+	    <p class="text-center mb-5"><?php echo get_theme_mod('tickets_body_subtitle_setting'); ?></p>
+	<?php
 
 	woocommerce_product_loop_start();
 
@@ -102,6 +108,6 @@ do_action( 'woocommerce_after_main_content' );
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action( 'woocommerce_sidebar' );
+// do_action( 'woocommerce_sidebar' );
 
 get_footer( 'shop' );

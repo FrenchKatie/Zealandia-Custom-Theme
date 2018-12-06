@@ -78,3 +78,30 @@
     color: red !important;
     background-color: blue;
 }
+
+.woocommerce-loop-product__title{
+  /* outline: 1px solid blue; */
+  float: left;
+  width: 50%;
+}
+.price{
+  /* outline: 1px solid green; */
+  float: left;
+  width: 50%;
+}
+.addshopitemtocart{
+  /* outline: 1px solid orange; */
+  float: left;
+  width: 50%;
+}
+.quantity{
+  /* outline: 1px solid red; */
+  float: left;
+  width: 50%;
+}
+.woocommerce ul.products li.product .button{
+  margin: 0px !important;
+}
+.flex{
+  display: flex;
+}

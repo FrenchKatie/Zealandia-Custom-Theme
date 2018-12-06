@@ -60,6 +60,8 @@ if ( woocommerce_product_loop() ) {
 	<div class="container">
 	    <h3 class="w-75 auto-margins pt-5 pb-5 text-center subheader"><?php echo get_theme_mod('tickets_body_title_setting'); ?></h3>
 	    <p class="text-center mb-5"><?php echo get_theme_mod('tickets_body_subtitle_setting'); ?></p>
+			<h5 class="small-header mt-5">Select your tickets:</h5>
+			<div class="list-group list-group-flush col ml-3">
 	<?php
 
 	woocommerce_product_loop_start();
@@ -80,6 +82,11 @@ if ( woocommerce_product_loop() ) {
 	}
 
 	woocommerce_product_loop_end();
+
+	?>
+	</div>
+</div>
+<?php
 
 	/**
 	 * Hook: woocommerce_after_shop_loop.

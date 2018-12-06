@@ -2,7 +2,15 @@
     /* Template Name: Tickets Page Template */
  ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+$obj_id = get_queried_object_id();
+$current_url = get_permalink( $obj_id );
+
+
+var_dump($current_url);
+var_dump($current_url.'?add-to-cart=100');
+?>
 
 
 <?php $HeaderImage = get_theme_mod('tickets_header_image_setting'); ?>
@@ -18,67 +26,57 @@
 
 
     <h5 class="small-header mt-5">Select your tickets:</h5>
+    <div class="list-group list-group-flush col ml-3">
+        <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
 
-        <div class="list-group list-group-flush col ml-3">
-            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
+
+
+    <?php
+    $args = array(
+        'posts_per_page' => -1,
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'product_cat',
+                'field' => 'slug',
+                'terms' => 'tickets'
+            )
+        ),
+        'post_type' => 'product',
+        'orderby' => 'title',
+    );
+    $the_query = new WP_Query( $args );
+    // var_dump($the_query);
+    if($the_query->have_posts()){
+        while($the_query->have_posts()){
+            $the_query->the_post();
+            $product = wc_get_product( get_the_id() );
+            // var_dump(get_the_title());
+            // var_dump(get_the_id());
+            // var_dump($product->get_price());
+
+            ?>
                 <div class="col">
-                    <h6>Adult</h6>
-                    <p>$19.50</p>
+                    <h6><?php echo(get_the_title()); ?></h6>
+                    <p>$<?php echo($product->get_price()); ?></p>
                 </div>
                 <div class="form-group col col-4 col-md-2 col-lg-1">
                     <input class="form-control" type="number" value="0" id="example-number-input">
                 </div>
-            </div>
-            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                <div class="col">
-                    <h6>Children - ages 5 - 17</h6>
-                    <p>$19.50</p>
-                </div>
-                <div class="form-group col col-4 col-md-2 col-lg-1">
-                    <input class="form-control" type="number" value="0" id="example-number-input">
-                </div>
-            </div>
-            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                <div class="col">
-                    <h6>Under 5's</h6>
-                    <p>$19.50</p>
-                </div>
-                <div class="form-group col col-4 col-md-2 col-lg-1">
-                    <input class="form-control" type="number" value="0" id="example-number-input">
-                </div>
-            </div>
-            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                <div class="col">
-                    <h6>Family - up to 2 adults and 3 children</h6>
-                    <p>$19.50</p>
-                </div>
-                <div class="form-group col col-4 col-md-2 col-lg-1">
-                    <input class="form-control" type="number" value="0" id="example-number-input">
-                </div>
-            </div>
-            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                <div class="col">
-                    <h6>Concession</h6>
-                    <p>$19.50</p>
-                </div>
-                <div class="form-group col col-4 col-md-2 col-lg-1">
-                    <input class="form-control" type="number" value="0" id="example-number-input">
-                </div>
-            </div>
-            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                <div class="col">
-                    <h6>Zealandia Members</h6>
-                    <p>$19.50</p>
-                </div>
-                <div class="form-group col col-4 col-md-2 col-lg-1">
-                    <input class="form-control" type="number" value="0" id="example-number-input">
-                </div>
-            </div>
-            <div class="mt-5 mb-5 text-center">
-                <a class="text-uppercase button mt-5" href="<?php echo get_theme_mod('tickets_page_button_link_setting'); ?>"><?php echo get_theme_mod('tickets_page_button_text_setting'); ?></a>
-            </div>
-        </div>
+            <?php
+        }
+    }
+
+
+
+
+
+    ?>
+
+    </div>
 </div>
+
+
 
 
 

@@ -20,8 +20,6 @@
         <div class="container">
 
             <?php
-                // $allTours = new WP_Query('post_type=tours&order=ASC&orderby=title');
-
                 $args = array(
                     'post_type' => 'tours',
                     'order' => 'ASC',

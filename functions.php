@@ -74,6 +74,16 @@ function add_tours_post_type(){
 }
 add_action('init', 'add_tours_post_type');
 
+//REMOVING POSTS AND COMMENTS FROM ADMIN DASHBOARD
+function remove_unused_wordpress_post_types(){
+  remove_menu_page('edit.php');
+  remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'remove_unused_wordpress_post_types');
+
+
+
+
 //SIDEBAR
 function register_my_sidebars(){
     register_sidebar(array(
@@ -216,13 +226,3 @@ remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_p
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'action_woocommerce_after_shop_loop_item_title', 10, 0 );
-
-// function woocommerce_disable_shop_page() {
-//     global $post;
-//     if (is_shop()):
-//     global $wp_query;
-//     $wp_query->set_404();
-//     status_header(404);
-//     endif;
-// }
-// add_action( 'wp', 'woocommerce_disable_shop_page' );

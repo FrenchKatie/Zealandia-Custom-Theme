@@ -374,7 +374,7 @@ function custom_theme_customizer($wp_customize){
 
       //Single tour Header Image section
       $wp_customize->add_section('single_tour_header_image_section', array(
-          'title'             => __('Header Image', 'zealandiaTheme'),
+          'title'             => __('Booking Feature Image', 'zealandiaTheme'),
           'priority'          => 30,
           'panel'             => 'Single_Tour_Page_Panel'
       ));
@@ -634,7 +634,7 @@ function custom_theme_customizer($wp_customize){
        )
    );
 
-     
+
 
 
 

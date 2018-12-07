@@ -8,8 +8,8 @@ $obj_id = get_queried_object_id();
 $current_url = get_permalink( $obj_id );
 
 
-var_dump($current_url);
-var_dump($current_url.'?add-to-cart=100');
+// var_dump($current_url);
+// var_dump($current_url.'?add-to-cart=100');
 ?>
 
 
@@ -26,8 +26,7 @@ var_dump($current_url.'?add-to-cart=100');
 
 
     <h5 class="small-header mt-5">Select your tickets:</h5>
-    <div class="list-group list-group-flush col ml-3">
-        <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
+    <div class="list-group list-group-flush col ml-3 mb-5">
 
 
 
@@ -39,7 +38,7 @@ var_dump($current_url.'?add-to-cart=100');
             array(
                 'taxonomy' => 'product_cat',
                 'field' => 'slug',
-                'terms' => 'tickets'
+                'terms' => 'Tickets'
             )
         ),
         'post_type' => 'product',
@@ -56,19 +55,18 @@ var_dump($current_url.'?add-to-cart=100');
             // var_dump($product->get_price());
 
             ?>
+            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
                 <div class="col">
                     <h6><?php echo(get_the_title()); ?></h6>
                     <p>$<?php echo($product->get_price()); ?></p>
                 </div>
-
-
-
-                <form class="cart addshopitemtocart" action="<?php echo($current_url.'?add-to-cart=' . get_the_id()); ?>" method="post" enctype="multipart/form-data">
-                    <div class="quantity form-group">
-                        <input class="form-control input-text qty text" name="quantity" type="number" value="0" id="example-number-input" step="1" min="0" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="<?php echo(get_the_title()); ?>">
+                <form class="form-group col justify-content-end d-flex" action="<?php echo($current_url.'?add-to-cart=' . get_the_id()); ?>" method="post" enctype="multipart/form-data">
+                    <div class="quantity form-group col-9 col-sm-7 col-md-4 col-lg-3 col-xl-2">
+                        <input class="form-control input-text qty text" name="quantity" type="number" value="0" id="example-number-input" >
                     </div>
-                    <button class="text-uppercase button mt-5 alt" href="" type="submit">Add to Cart Button </button>
+                    <button class="text-uppercase button alt " href="" type="submit">Add to Cart</button>
                 </form>
+            </div>
 
 
 

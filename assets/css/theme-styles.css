@@ -45,10 +45,10 @@
 }
 .bg-img{
     height: 500px;
-    background-size: cover;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center !important;
     background-color: black;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
 }
 .auto-margins{
     margin: auto;

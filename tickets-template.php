@@ -60,9 +60,19 @@ var_dump($current_url.'?add-to-cart=100');
                     <h6><?php echo(get_the_title()); ?></h6>
                     <p>$<?php echo($product->get_price()); ?></p>
                 </div>
-                <div class="form-group col col-4 col-md-2 col-lg-1">
-                    <input class="form-control" type="number" value="0" id="example-number-input">
-                </div>
+
+
+
+                <form class="cart addshopitemtocart" action="<?php echo($current_url.'?add-to-cart=' . get_the_id()); ?>" method="post" enctype="multipart/form-data">
+                    <div class="quantity form-group">
+                        <input class="form-control input-text qty text" name="quantity" type="number" value="0" id="example-number-input" step="1" min="0" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="<?php echo(get_the_title()); ?>">
+                    </div>
+                    <button class="text-uppercase button mt-5 alt" href="" type="submit">Add to Cart Button </button>
+                </form>
+
+
+
+
             <?php
         }
     }
@@ -72,7 +82,7 @@ var_dump($current_url.'?add-to-cart=100');
 
 
     ?>
-
+        </div>
     </div>
 </div>
 

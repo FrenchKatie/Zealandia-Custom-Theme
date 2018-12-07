@@ -16,12 +16,12 @@
         <div class="">
             <h6 class="small-header pb-1">Opening Hours:</h6>
             <ul class="list-group list-group-flush body-list">
-              <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">General Admission<span class="">9:00am - 5:00am</span></li>
-              <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Rata Cafe - Weekdays<span class="">9:00am - 4.30pm</span></li>
-              <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Rata Cafe - Weekends<span class="">9:00am - 5:00pm</span></li>
+              <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">General Admission<span class=""><?php echo get_theme_mod('home_general_admission_opening_hours_setting'); ?></span></li>
+              <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Rata Cafe - Weekdays<span class=""><?php echo get_theme_mod('home_cafe_weekday_opening_hours_setting'); ?></span></li>
+              <li class="list-group-item d-flex justify-content-between align-items-center body pl-0 pr-0">Rata Cafe - Weekends<span class=""><?php echo get_theme_mod('home_cafe_weekends_opening_hours_setting'); ?></span></li>
             </ul>
             <h6 class="small-header mt-5 pb-1">Address:</h6>
-            <p class="body">53 Waiapu Road, Karori, Wellington, New Zealand, 6012</p>
+            <p class="body"><?php echo get_theme_mod('home_address_setting'); ?></p>
         </div>
     </div>
     <div class="bg-img" style="background-image: url(<?php echo get_theme_mod('home_map_image_setting'); ?>)"></div>

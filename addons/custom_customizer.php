@@ -90,7 +90,7 @@ function custom_theme_customizer($wp_customize){
        'default' => '',
        'transport' => 'refresh'
    ));
-   
+
 
     $wp_customize->add_control(
        new WP_Customize_Control(
@@ -155,23 +155,83 @@ function custom_theme_customizer($wp_customize){
           'priority'          => 53,
           'panel'             => 'Home_Page_Panel'
       ));
-
-      $wp_customize->add_setting('home_opening_hours_setting', array(
+      //general admission opening hours
+      $wp_customize->add_setting('home_general_admission_opening_hours_setting', array(
           'default'           => '',
           'transport'         => 'refresh'
       ));
 
       $wp_customize->add_control(
-          new WP_Customize_Date_Time_Control(
+          new WP_Customize_Control(
               $wp_customize,
-              'home_opening_hours_control',
+              'home_general_admission_opening_hours_control',
               array(
                   'label'     => __('General Admission Opening Hours' , 'zealandiaTheme'),
                   'section'   => 'home_opening_hours_section',
-                  'settings'  => 'home_opening_hours_setting'
+                  'settings'  => 'home_general_admission_opening_hours_setting'
               )
           )
       );
+
+      //rata cafe weekdays hours
+      $wp_customize->add_setting('home_cafe_weekday_opening_hours_setting', array(
+          'default'           => '',
+          'transport'         => 'refresh'
+      ));
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'home_cafe_weekday_opening_hours_control',
+              array(
+                  'label'     => __('Rata Cafe Weekdays Opening Hours' , 'zealandiaTheme'),
+                  'section'   => 'home_opening_hours_section',
+                  'settings'  => 'home_cafe_weekday_opening_hours_setting'
+              )
+          )
+      );
+
+      //rata cafe weekends hours
+      $wp_customize->add_setting('home_cafe_weekends_opening_hours_setting', array(
+          'default'           => '',
+          'transport'         => 'refresh'
+      ));
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'home_cafe_weekends_opening_hours_control',
+              array(
+                  'label'     => __('Rata Cafe Weekends Opening Hours' , 'zealandiaTheme'),
+                  'section'   => 'home_opening_hours_section',
+                  'settings'  => 'home_cafe_weekends_opening_hours_setting'
+              )
+          )
+      );
+
+      //Address section
+      $wp_customize->add_section('home_address_section', array(
+           'title'             => __('Address' , 'zealandiaTheme'),
+           'priority'          => 53,
+           'panel'             => 'Home_Page_Panel'
+       ));
+       //address
+       $wp_customize->add_setting('home_address_setting', array(
+           'default'           => '',
+           'transport'         => 'refresh'
+       ));
+
+       $wp_customize->add_control(
+           new WP_Customize_Control(
+               $wp_customize,
+               'home_address_control',
+               array(
+                   'label'     => __('Address' , 'zealandiaTheme'),
+                   'section'   => 'home_address_section',
+                   'settings'  => 'home_address_setting'
+               )
+           )
+       );
 
      //Map Image section
      $wp_customize->add_section('home_map_image_section', array(

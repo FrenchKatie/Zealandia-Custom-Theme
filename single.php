@@ -114,105 +114,66 @@
             </div>
 
         </div>
+
         <div class="bg-img parent w-100 mb-5" style="background-image: url(<?php echo get_theme_mod('single_tour_header_image_setting'); ?>)"></div>
+
+
         <div class="container">
             <h3 class="text-center mb-3 subheader">Make a Booking</h3>
             <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-            <div class="mt-5">
-                <form class="form-group mb-5 mt-5" action="index.html" method="post">
-                    <h5 class="small-header">Select a date for your tour:</h5>
-                    <select class="form-control mb-5">
-                      <option>Default select</option>
-                    </select>
+                    <?php
+                        $obj_id = get_queried_object_id();
+                        $current_url = get_permalink( $obj_id );
+                     ?>
+
+
+                    <div class="container">
+                        <h5 class="small-header mt-5">Select your tickets:</h5>
+                        <div class="list-group list-group-flush col ml-3 mb-5">
 
 
 
+                    <?php
+                    $args = array(
+                        'posts_per_page' => -1,
+                        'tax_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'taxonomy' => 'product_cat',
+                                'field' => 'slug',
+                                'terms' => 'Zealandia by Day'
+                            )
+                        ),
+                        'post_type' => 'product',
+                        'orderby' => 'title',
+                    );
+                    $the_query = new WP_Query( $args );
+                    if($the_query->have_posts()){
+                        while($the_query->have_posts()){
+                            $the_query->the_post();
+                            $product = wc_get_product( get_the_id() );
+                    ?>
 
-                    <h5 class="small-header">Select a time for your tour:</h5>
-
-                    <div class="mb-5">
-
-                        <div class="custom-control custom-radio custom-control-inline mr-5">
-                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline1">10:00 AM</label>
+                    <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
+                        <div class="col">
+                            <h6><?php echo(get_the_title()); ?></h6>
+                            <p>$<?php echo($product->get_price()); ?></p>
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline2">2:00PM</label>
-                        </div>
+                        <form class="form-group col justify-content-end d-flex" action="<?php echo($current_url.'?add-to-cart=' . get_the_id()); ?>" method="post" enctype="multipart/form-data">
+                            <div class="quantity form-group col-9 col-sm-7 col-md-4 col-lg-3 col-xl-2">
+                                <input class="form-control input-text qty text" name="quantity" type="number" value="0" id="example-number-input" >
+                            </div>
+                            <button class="text-uppercase button alt " href="" type="submit">Add to Cart</button>
+                        </form>
                     </div>
+                </div>
+                    <?php
+                }
+            }
 
-
-
-
-                    <h5 class="small-header">Select your tickets:</h5>
-
-                        <div class="list-group list-group-flush col ml-3">
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                                <div class="col">
-                                    <h6>Adult</h6>
-                                    <p>$19.50</p>
-                                </div>
-                                <div class="form-group col col-4 col-md-2 col-lg-1">
-                                    <input class="form-control" type="number" value="0" id="example-number-input">
-                                </div>
-                            </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                                <div class="col">
-                                    <h6>Children - ages 5 - 17</h6>
-                                    <p>$19.50</p>
-                                </div>
-                                <div class="form-group col col-4 col-md-2 col-lg-1">
-                                    <input class="form-control" type="number" value="0" id="example-number-input">
-                                </div>
-                            </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                                <div class="col">
-                                    <h6>Under 5's</h6>
-                                    <p>$19.50</p>
-                                </div>
-                                <div class="form-group col col-4 col-md-2 col-lg-1">
-                                    <input class="form-control" type="number" value="0" id="example-number-input">
-                                </div>
-                            </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                                <div class="col">
-                                    <h6>Family - up to 2 adults and 3 children</h6>
-                                    <p>$19.50</p>
-                                </div>
-                                <div class="form-group col col-4 col-md-2 col-lg-1">
-                                    <input class="form-control" type="number" value="0" id="example-number-input">
-                                </div>
-                            </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                                <div class="col">
-                                    <h6>Concession</h6>
-                                    <p>$19.50</p>
-                                </div>
-                                <div class="form-group col col-4 col-md-2 col-lg-1">
-                                    <input class="form-control" type="number" value="0" id="example-number-input">
-                                </div>
-                            </div>
-                            <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                                <div class="col">
-                                    <h6>Zealandia Members</h6>
-                                    <p>$19.50</p>
-                                </div>
-                                <div class="form-group col col-4 col-md-2 col-lg-1">
-                                    <input class="form-control" type="number" value="0" id="example-number-input">
-                                </div>
-                            </div>
-                            <div class="mt-5 mb-5 text-center">
-                                <a class="text-uppercase button mb-5 w-25" href="#"><?php echo get_theme_mod('single_tour_page_button_text_setting'); ?></a>
-                            </div>
-
-
-                        </div>
-
-                </form>
-            </div>
-
+            ?>
+        </div>
         <?php endwhile; ?>
     <?php endif; ?>
 </div>

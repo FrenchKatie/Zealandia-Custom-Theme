@@ -216,3 +216,13 @@ remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_p
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'action_woocommerce_after_shop_loop_item_title', 10, 0 );
+
+// function woocommerce_disable_shop_page() {
+//     global $post;
+//     if (is_shop()):
+//     global $wp_query;
+//     $wp_query->set_404();
+//     status_header(404);
+//     endif;
+// }
+// add_action( 'wp', 'woocommerce_disable_shop_page' );

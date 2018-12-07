@@ -17,6 +17,7 @@ add_action('wp_enqueue_scripts', 'add_custom_styles');
 
 //GET CUSTOM CUSTOMIZER FILES
 require get_parent_theme_file_path('/addons/custom_customizer.php');
+require get_parent_theme_file_path('/addons/custom_colors.php');
 require get_parent_theme_file_path('/addons/custom_fields.php');
 
 

@@ -32,9 +32,10 @@
              <?php if( $allTours->have_posts() ): ?>
                  <?php while($allTours->have_posts()): $allTours->the_post();?>
                      <div class="text-center mt-5">
-                         <?php if( has_post_thumbnail() ): ?>
-                             <?php the_post_thumbnail( 'large', array( 'sizes' => '(width:100) 145px, (width:425px) 220px, 500px' ) ); ?>
-                         <?php endif; ?>
+                       <?php if( has_post_thumbnail() ): ?>
+                           <?php  $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                           echo '<div class="bg-img" style="background: url('. $url.')"></div>'; ?>
+                       <?php endif; ?>
                        <div class="mt-5 mb-5">
                          <h5 class="subheader"><?php the_title(); ?></h5>
                          <p class="body"><?php the_excerpt(); ?></p>

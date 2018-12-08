@@ -256,30 +256,7 @@ function custom_theme_customizer($wp_customize){
               )
           )
       );
-     //Home body lower section
-     $wp_customize->add_section('home_body_lower_section_title_section', array(
-          'title'             => __('Lower Section of Body' , 'zealandiaTheme'),
-          'priority'          => 53,
-          'panel'             => 'Home_Page_Panel'
-      ));
-
-      $wp_customize->add_setting('home_body_lower_section_title_setting', array(
-          'default'           => '',
-          'transport'         => 'refresh'
-      ));
-
-      $wp_customize->add_control(
-          new WP_Customize_Control(
-              $wp_customize,
-              'home_body_lower_section_title_control',
-              array(
-                  'label'     => __('Title' , 'zealandiaTheme'),
-                  'section'   => 'home_body_lower_section_title_section',
-                  'settings'  => 'home_body_lower_section_title_setting'
-              )
-          )
-      );
-
+     
       //---------------
       //TOURS PAGE PANEL
       //---------------

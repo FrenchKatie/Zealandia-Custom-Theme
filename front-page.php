@@ -26,8 +26,6 @@
     </div>
     <div class="bg-img" style="background-image: url(<?php echo get_theme_mod('home_map_image_setting'); ?>)"></div>
 
-    <div class="container">
-        <h3 class="subheader text-center mt-5 mb-5"><?php echo get_theme_mod('home_body_lower_section_title_setting'); ?></h3>
-    </div>
+    
 
 <?php get_footer(); ?>

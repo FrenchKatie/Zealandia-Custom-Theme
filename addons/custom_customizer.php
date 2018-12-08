@@ -372,7 +372,7 @@ function custom_theme_customizer($wp_customize){
          )
      );
 
-     
+
      //---------------
      //TICKETS PAGE PANEL
      //---------------
@@ -452,51 +452,6 @@ function custom_theme_customizer($wp_customize){
             )
         )
     );
-
-    //Tickets page button link
-    $wp_customize->add_section('tickets_page_button_section', array(
-       'title' => __('Button ' , 'zealandiaTheme'),
-       'priority' => 21,
-       'panel' => 'Tickets_Page_Panel'
-   ));
-
-
-    $wp_customize->add_setting('tickets_page_button_link_setting', array(
-       'default' => '',
-       'transport' => 'refresh'
-   ));
-    $wp_customize->add_control(
-       new WP_Customize_Control(
-           $wp_customize,
-           'tickets_page_button_link_control',
-           array(
-               'label' => __('Button Link', 'zealandiaTheme'),
-               'section' => 'tickets_page_button_section',
-               'settings' => 'tickets_page_button_link_setting'
-           )
-       )
-   );
-    //Tickets page button text
-    $wp_customize->add_section('tickets_page_button_text_section', array(
-       'title' => __('Button Text ' , 'zealandiaTheme'),
-       'priority' => 21,
-       'panel' => 'Home_Page_Panel'
-   ));
-    $wp_customize->add_setting('tickets_page_button_text_setting', array(
-       'default' => '',
-       'transport' => 'refresh'
-   ));
-    $wp_customize->add_control(
-       new WP_Customize_Control(
-           $wp_customize,
-           'tickets_page_button_text_control',
-           array(
-               'label' => __('Button Text', 'zealandiaTheme'),
-               'section' => 'tickets_page_button_section',
-               'settings' => 'tickets_page_button_text_setting'
-           )
-       )
-   );
 
    //---------------
    //DONATE PAGE PANEL

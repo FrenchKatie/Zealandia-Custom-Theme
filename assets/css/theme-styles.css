@@ -105,3 +105,6 @@
 .flex{
   display: flex;
 }
+.input-text, .woocommerce-input-wrapper {
+  width: 100%;
+}

@@ -85,3 +85,4 @@ $current_url = get_permalink( $obj_id );
         </div>
     </div>
 </div>
+<?php get_footer(); ?>

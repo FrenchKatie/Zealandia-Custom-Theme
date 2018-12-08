@@ -4,7 +4,6 @@
 
 
  ?>
-
 <?php get_header(); ?>
 
 
@@ -125,61 +124,69 @@
 
 
         <div class="container">
-            <h3 class="text-center mb-3 subheader">Make a Booking</h3>
+            <h3 class="text-center mb-3 subheader">Book your tickets today!</h3>
             <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                     <?php
                         $obj_id = get_queried_object_id();
                         $current_url = get_permalink( $obj_id );
+                        // echo ($current_url);
                      ?>
 
 
-                    <div class="container">
-                        <h5 class="small-header mt-5">Select your tickets:</h5>
-                        <div class="list-group list-group-flush col ml-3 mb-5">
+                     <div class="container">
+                         <h5 class="small-header mt-5">Select your tickets:</h5>
+                         <div class="list-group list-group-flush col ml-3 mb-5">
 
 
 
-                    <?php
-                    $args = array(
-                        'posts_per_page' => -1,
-                        'tax_query' => array(
-                            'relation' => 'AND',
-                            array(
-                                'taxonomy' => 'product_cat',
-                                'field' => 'slug',
-                                'terms' => 'Zealandia by Day'
-                            )
-                        ),
-                        'post_type' => 'product',
-                        'orderby' => 'title',
-                    );
-                    $the_query = new WP_Query( $args );
-                    if($the_query->have_posts()){
-                        while($the_query->have_posts()){
-                            $the_query->the_post();
-                            $product = wc_get_product( get_the_id() );
-                    ?>
+                         <?php
+                         $args = array(
+                             'posts_per_page' => -1,
+                             'tax_query' => array(
+                                 'relation' => 'AND',
+                                 array(
+                                     'taxonomy' => 'product_cat',
+                                     'field' => 'slug',
+                                     'terms' => 'Tours'
+                                 )
+                             ),
+                             'post_type' => 'product',
+                             'orderby' => 'title',
+                         );
+                         $the_query = new WP_Query( $args );
+                         // var_dump($the_query);
+                         if($the_query->have_posts()){
+                             while($the_query->have_posts()){
+                                 $the_query->the_post();
+                                 $product = wc_get_product( get_the_id() );
+                                 // var_dump(get_the_title());
+                                 // var_dump(get_the_id());
+                                 // var_dump($product->get_price());
 
-                    <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
-                        <div class="col">
-                            <h6><?php echo(get_the_title()); ?></h6>
-                            <p>$<?php echo($product->get_price()); ?></p>
-                        </div>
-                        <form class="form-group col justify-content-end d-flex" action="<?php echo($current_url.'?add-to-cart=' . get_the_id()); ?>" method="post" enctype="multipart/form-data">
-                            <div class="quantity form-group col-9 col-sm-7 col-md-4 col-lg-3 col-xl-2">
-                                <input class="form-control input-text qty text" name="quantity" type="number" value="0" id="example-number-input" >
-                            </div>
-                            <button class="text-uppercase button alt " href="" type="submit">Add to Cart</button>
-                        </form>
-                    </div>
-                </div>
-                    <?php
-                }
-            }
+                                 ?>
+                                 <div class="list-group-item row d-flex justify-content-between align-items-center body pl-0 pr-0 body-div">
+                                     <div class="col">
+                                         <h6><?php echo(get_the_title()); ?></h6>
+                                         <p>$<?php echo($product->get_price()); ?></p>
+                                     </div>
+                                     <form class="form-group col justify-content-end d-flex" action="<?php echo($current_url.'?add-to-cart=' . get_the_id()); ?>" method="post" enctype="multipart/form-data">
+                                         <div class="quantity form-group col-9 col-sm-7 col-md-4 col-lg-3 col-xl-2">
+                                             <input class="form-control input-text qty text" name="quantity" type="number" value="0" id="example-number-input" >
+                                         </div>
+                                         <button class="text-uppercase button alt " href="" type="submit">Add to Cart</button>
+                                     </form>
+                                 </div>
 
-            ?>
-        </div>
+
+
+
+                                <?php
+                             }
+                         }
+                         ?>
+                             </div>
+                         </div>
         <?php endwhile; ?>
     <?php endif; ?>
 </div>

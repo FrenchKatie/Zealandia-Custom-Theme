@@ -2,7 +2,14 @@
     /* Template Name: Tours Page Template */
  ?>
 
-<?php get_header(); ?>
+<?php get_header();?>
+<?php
+    $obj_id = get_queried_object_id();
+    $current_url = get_permalink( $obj_id );
+ ?>
+
+
+
 
 
 <?php $HeaderImage = get_theme_mod('tours_header_image_setting'); ?>

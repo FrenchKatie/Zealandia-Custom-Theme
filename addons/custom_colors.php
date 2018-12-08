@@ -265,45 +265,45 @@ function custom_theme_customizer_styles(){
  ?>
       <style type="text/css">
          .header-bg{
-             background-color: <?php echo get_theme_mod('header_background_color_setting', '#ffffff'); ?>!important;
+             background-color: <?php echo get_theme_mod('header_background_color_setting'); ?>!important;
          }
          .header-nav li a{
-             color: <?php echo get_theme_mod('header_links_color_setting', '#ffffff'); ?>!important;
+             color: <?php echo get_theme_mod('header_links_color_setting'); ?>!important;
          }
          .footer-nav{
-             background-color: <?php echo get_theme_mod('footer_background_color_setting', '#ffffff'); ?>!important;
+             background-color: <?php echo get_theme_mod('footer_background_color_setting'); ?>!important;
          }
          .footer-nav li a{
-             color: <?php echo get_theme_mod('footer_links_color_setting', '#ffffff'); ?>!important;
+             color: <?php echo get_theme_mod('footer_links_color_setting'); ?>!important;
          }
          .header_img_header {
-             color: <?php echo get_theme_mod('home_page_header_image_title_text_color_setting', '#ffffff'); ?>!important;
+             color: <?php echo get_theme_mod('home_page_header_image_title_text_color_setting'); ?>!important;
          }
          .header_img_subheader {
-             color: <?php echo get_theme_mod('home_page_header_image_subheader_text_color_setting', '#ffffff'); ?>!important;
+             color: <?php echo get_theme_mod('home_page_header_image_subheader_text_color_setting'); ?>!important;
          }
          body {
-             color: <?php echo get_theme_mod('body_text_color_setting', '#ffffff'); ?>!important;
-             background-color: <?php echo get_theme_mod('body_background_color_setting', '#ffffff'); ?>!important;
+             color: <?php echo get_theme_mod('body_text_color_setting'); ?>!important;
+             background-color: <?php echo get_theme_mod('body_background_color_setting'); ?>!important;
          }
          .subheader {
-             color: <?php echo get_theme_mod('body_header_text_color_setting', '#ffffff'); ?>!important;
+             color: <?php echo get_theme_mod('body_header_text_color_setting'); ?>!important;
          }
          .subheader {
-             color: <?php echo get_theme_mod('body_header_text_color_setting', '#ffffff'); ?>!important;
+             color: <?php echo get_theme_mod('body_header_text_color_setting'); ?>!important;
          }
          .small-header {
-             color: <?php echo get_theme_mod('body_smallheader_text_color_setting', '#ffffff'); ?>!important;
+             color: <?php echo get_theme_mod('body_smallheader_text_color_setting'); ?>!important;
          }
          .button {
-             background-color: <?php echo get_theme_mod('button_background_color_setting', '#ffffff'); ?>!important;
-             color: <?php echo get_theme_mod('button_text_color_setting', '#ffffff'); ?>!important;
+             background-color: <?php echo get_theme_mod('button_background_color_setting'); ?>!important;
+             color: <?php echo get_theme_mod('button_text_color_setting'); ?>!important;
          }
          .body-list li{
-             background-color: <?php echo get_theme_mod('body_background_color_setting', '#ffffff'); ?>!important;
+             background-color: <?php echo get_theme_mod('body_background_color_setting'); ?>!important;
          }
          .body-div{
-             background-color: <?php echo get_theme_mod('body_background_color_setting', '#ffffff'); ?>!important;
+             background-color: <?php echo get_theme_mod('body_background_color_setting'); ?>!important;
          }
      </style>
   <?php

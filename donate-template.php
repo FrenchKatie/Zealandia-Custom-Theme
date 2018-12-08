@@ -16,15 +16,15 @@ $current_url = get_permalink( $obj_id );
 
 <?php $HeaderImage = get_theme_mod('tickets_header_image_setting'); ?>
 <?php if(strlen($HeaderImage) > 0): ?>
-    <div class="bg-img w-100" style="background-image: url(<?php echo get_theme_mod('tickets_header_image_setting'); ?>)">
+    <div class="bg-img w-100" style="background-image: url(<?php echo get_theme_mod('donate_header_image_setting'); ?>)">
 
     </div>
 <?php endif; ?>
 
 
 <div class="container">
-    <h3 class="w-75 auto-margins pt-5 pb-5 text-center subheader"><?php echo get_theme_mod('tickets_body_title_setting'); ?></h3>
-    <p class="text-center mb-5"><?php echo get_theme_mod('tickets_body_subtitle_setting'); ?></p>
+    <h3 class="w-75 auto-margins pt-5 pb-5 text-center subheader"><?php echo get_theme_mod('donate_body_title_setting'); ?></h3>
+    <p class="text-center mb-5"><?php echo get_theme_mod('donate_body_subtitle_setting'); ?></p>
 
 
     <h5 class="small-header mt-5">Select how much you would like to donate:</h5>

@@ -372,29 +372,7 @@ function custom_theme_customizer($wp_customize){
          )
      );
 
-     //Tickets page button text
-     $wp_customize->add_section('single_tour_page_button_section', array(
-        'title' => __('Button' , 'zealandiaTheme'),
-        'priority' => 21,
-        'panel' => 'Single_Tour_Page_Panel'
-    ));
-
-
-     $wp_customize->add_setting('single_tour_page_button_text_setting', array(
-        'default' => '',
-        'transport' => 'refresh'
-    ));
-     $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'single_tour_page_button_text_control',
-            array(
-                'label' => __('Button Text', 'zealandiaTheme'),
-                'section' => 'single_tour_page_button_section',
-                'settings' => 'single_tour_page_button_text_setting'
-            )
-        )
-    );
+     
      //---------------
      //TICKETS PAGE PANEL
      //---------------
@@ -519,6 +497,86 @@ function custom_theme_customizer($wp_customize){
            )
        )
    );
+
+   //---------------
+   //DONATE PAGE PANEL
+   //---------------
+   $wp_customize->add_panel('Donate_Page_Panel', array(
+       'title'             => __('Donate Page' , 'zealandiaTheme'),
+       'priority'          => 30,
+       'description'       => 'This panel will hold the donate page sections'
+   ));
+
+
+   //Tickets Header Image section
+   $wp_customize->add_section('donate_header_image_section', array(
+       'title'             => __('Header Image', 'zealandiaTheme'),
+       'priority'          => 30,
+       'panel'             => 'Donate_Page_Panel'
+   ));
+
+   $wp_customize->add_setting('donate_header_image_setting', array(
+       'default'           => '',
+       'transport'         => 'refresh'
+   ));
+
+   $wp_customize->add_control(
+      new WP_Customize_Image_Control(
+          $wp_customize,
+          'donate_header_image_control',
+          array(
+              'label'      => __( 'Upload an image', 'zealandiaTheme' ),
+              'section'    => 'donate_header_image_section',
+              'settings'   => 'donate_header_image_setting'
+          )
+      )
+  );
+   //Tickets Title Text section
+   $wp_customize->add_section('donate_body_title_section', array(
+       'title'             => __('Title', 'zealandiaTheme'),
+       'priority'          => 30,
+       'panel'             => 'Donate_Page_Panel'
+   ));
+
+   $wp_customize->add_setting('donate_body_title_setting', array(
+       'default'           => '',
+       'transport'         => 'refresh'
+   ));
+
+   $wp_customize->add_control(
+      new WP_Customize_Control(
+          $wp_customize,
+          'donate_body_title_control',
+          array(
+              'label'      => __( 'Title Text', 'zealandiaTheme' ),
+              'section'    => 'donate_body_title_section',
+              'settings'   => 'donate_body_title_setting'
+          )
+      )
+  );
+   //Tickets Subtitle Text section
+   $wp_customize->add_section('donate_body_subtitle_section', array(
+       'title'             => __('Subtitle', 'zealandiaTheme'),
+       'priority'          => 30,
+       'panel'             => 'Donate_Page_Panel'
+   ));
+
+   $wp_customize->add_setting('donate_body_subtitle_setting', array(
+       'default'           => '',
+       'transport'         => 'refresh'
+   ));
+
+   $wp_customize->add_control(
+      new WP_Customize_Control(
+          $wp_customize,
+          'donate_body_subtitle_control',
+          array(
+              'label'      => __( 'Subtitle Text', 'zealandiaTheme' ),
+              'section'    => 'donate_body_subtitle_section',
+              'settings'   => 'donate_body_subtitle_setting'
+          )
+      )
+  );
 
 
 

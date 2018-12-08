@@ -256,7 +256,6 @@ function custom_theme_customizer($wp_customize){
               )
           )
       );
-     
       //---------------
       //TOURS PAGE PANEL
       //---------------
@@ -369,96 +368,6 @@ function custom_theme_customizer($wp_customize){
                  'label'      => __( 'Upload an image', 'zealandiaTheme' ),
                  'section'    => 'single_tour_header_image_section',
                  'settings'   => 'single_tour_header_image_setting'
-             )
-         )
-     );
-
-
-
-      //Single tour carousel images
-      $wp_customize->add_section('single_tour_carousel_images_section', array(
-          'title'             => __('Carousel Images', 'zealandiaTheme'),
-          'priority'          => 30,
-          'panel'             => 'Single_Tour_Page_Panel'
-      ));
-
-
-
-
-      //Single tour carousel image one
-      $wp_customize->add_setting('single_tour_carousel_image_one_setting', array(
-          'default'           => '',
-          'transport'         => 'refresh'
-      ));
-
-      $wp_customize->add_control(
-         new WP_Customize_Image_Control(
-             $wp_customize,
-             'single_tour_carousel_image_one_control',
-             array(
-                 'label'      => __( 'Image One', 'zealandiaTheme' ),
-                 'section'    => 'single_tour_carousel_images_section',
-                 'settings'   => 'single_tour_carousel_image_one_setting'
-             )
-         )
-     );
-
-
-
-     //Single tour carousel image two
-      $wp_customize->add_setting('single_tour_carousel_image_two_setting', array(
-          'default'           => '',
-          'transport'         => 'refresh'
-      ));
-
-      $wp_customize->add_control(
-         new WP_Customize_Image_Control(
-             $wp_customize,
-             'single_tour_carousel_image_two_control',
-             array(
-                 'label'      => __( 'Image Two', 'zealandiaTheme' ),
-                 'section'    => 'single_tour_carousel_images_section',
-                 'settings'   => 'single_tour_carousel_image_two_setting'
-             )
-         )
-     );
-
-
-
-     //Single tour carousel image three
-      $wp_customize->add_setting('single_tour_carousel_image_three_setting', array(
-          'default'           => '',
-          'transport'         => 'refresh'
-      ));
-
-      $wp_customize->add_control(
-         new WP_Customize_Image_Control(
-             $wp_customize,
-             'single_tour_carousel_image_three_control',
-             array(
-                 'label'      => __( 'Image Three', 'zealandiaTheme' ),
-                 'section'    => 'single_tour_carousel_images_section',
-                 'settings'   => 'single_tour_carousel_image_three_setting'
-             )
-         )
-     );
-
-
-
-     //Single tour carousel image four
-      $wp_customize->add_setting('single_tour_carousel_image_four_setting', array(
-          'default'           => '',
-          'transport'         => 'refresh'
-      ));
-
-      $wp_customize->add_control(
-         new WP_Customize_Image_Control(
-             $wp_customize,
-             'single_tour_carousel_image_four_control',
-             array(
-                 'label'      => __( 'Image Four', 'zealandiaTheme' ),
-                 'section'    => 'single_tour_carousel_images_section',
-                 'settings'   => 'single_tour_carousel_image_four_setting'
              )
          )
      );
